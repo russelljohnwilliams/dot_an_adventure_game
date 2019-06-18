@@ -6,10 +6,6 @@ var dot = {
   column: "_2",
   colour: "pink"
 };
-// var ground = {
-//   row: "1"
-//   colour: "green"
-// } 
 
 window.onload = function(){
   buildWorld()
@@ -50,60 +46,29 @@ function generateCircles(int){
   }
 }
 
-// function moveUpOrDown(direction){
-//   var dotty = $('#row4 #'+dot.column)
-//   console.log('updown', dotty)
-//   var id = dotty.parent().attr('id')
-//   console.log('ID', parseInt(id.substr(3))-1)
-//   var int = parseInt(id.substr(3))
-//   if (direction == 'up'){ 
-//     var moveTo = int - 1 
-//   }else if (direction == 'down'){
-//     var moveTo = int + 1 
-//   }
-//   clearCurrentElement(dotty, 'white')
-//   moveDot("row" + moveTo)
-// }
-
-// function moveLeftOrRight(direction){
-//   var dotty = $('#row4 #'+dot.column)
-//   console.log('leftRight', dotty)
-//   var id = dotty.attr('id')
-//   console.log('ID', id)
-//   var int = parseInt(id.substr(1))
-//   if (direction == 'left'){ 
-//     var moveTo = int - 1 
-//   }else if (direction == 'right'){
-//     var moveTo = int + 1 
-//   }
-//   clearCurrentElement(dotty, 'white')
-//   moveDot("_" + moveTo)
-// }
-
 function moveDot(direction){
   var row = parseInt(dot.row.substring(3))
   var column = parseInt(dot.column.substring(1))
   if (direction == 'left'){ 
-    var horizontal = '_' + (column - 1)
-    var vertical = 'row' + row
-  }else if (direction == 'right'){
-    var horizontal = '_' + (column + 1)
-    var vertical = 'row' + row
-  }else if (direction == 'up'){
-    var horizontal = '_' + column
-    var vertical = 'row' + (row - 1)
-  }else if (direction == 'down'){
-    var horizontal = '_' + column
-    var vertical = 'row' + (row + 1)
-  }
     clearCurrentElement(row, column, 'white')
-    move(horizontal, vertical)
+    column -= 1
+  }else if (direction == 'right'){
+    clearCurrentElement(row, column, 'white')
+    column += 1
+  }else if (direction == 'up'){
+    clearCurrentElement(row, column, 'white')
+    row -= 1
+  }else if (direction == 'down'){
+    clearCurrentElement(row, column, 'white')
+    row += 1
+  }
+  var horizontal = '_' + column
+  var vertical = 'row' + row
+  
+  move(horizontal, vertical)
 }
 
 function clearCurrentElement(row, column, colour){
-// console.log('row', row)
-// console.log('column', column)
-// console.log($('#row'+ row).find('#_'+column))
   $('#row'+ row).find('#_'+column).css('background', colour)
 }
 
