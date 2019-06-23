@@ -1,32 +1,121 @@
 
-.empty-circle{
-  height: 75px;
-  /*width: 75px;*/
-  width: calc(100% / 15 - 21px);
-  float: left;
-  margin: 10px;
-  background: white;
-  border-radius: 100%;
+
+
+.the-world{
 }
 
-._1{
-
+.empty-circle{
+  float: left;
+  margin: 0;
+  background-color: whitesmoke;
+  position: relative;
+  width: calc(100vw / 20);
+  height:calc(100vw / 20);
+  background: -moz-radial-gradient(transparent 67%, rgba(60, 60, 60, 1) 67%);
+  background: -webkit-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%);
+  background: -ms-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%);
+  background: -o-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%);
 }
 
 .row{
-  height: 75px;
-  width: 100vw; 
-  /*border: solid black 1px;*/
+  /*border: solid 1px black;*/
+  width: calc(100vw); 
 }
 
-
-#_4{
-  background: black;
-}
 
 body{
   margin: 0;
   height: 100vh;
   width: 100vw;
-  background: grey;
+  background: url(tree.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-size: cover;
 }
+
+
+
+.pill{
+  position: relative;
+  z-index: 10;
+  width: calc(100vw / 20);
+  height:calc(100vw / 20);
+  border: none;
+  background:-webkit-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%), -webkit-radial-gradient(transparent 20px, rgba(60, 60, 60,0.6) 20px),-webkit-radial-gradient(transparent 10px, rgba(60, 60, 60,0.4) 10px);
+  margin: ;
+  animation: pill-pulse 1.4s infinite;
+}
+
+.pill::after{
+  border-radius: 100%;
+  content: "";
+  background-color: black;
+  border-radius: 0px;
+}
+
+@-webkit-keyframes pill-pulse {
+  0% {
+/*    background:-webkit-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%), -webkit-radial-gradient(transparent 20px, rgba(60, 60, 60,0.6) 20px),-webkit-radial-gradient(transparent 10px, rgba(60, 60, 60,0.4) 10px);*/
+    background-color: yellow;
+    transform: scale(0.8);
+    -webkit-box-shadow: 0 0 0 10px rgba(60, 60, 60, 1);
+
+  }
+  50% {
+
+    /*background: -webkit-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%), -webkit-radial-gradient(transparent 20px, rgba(60, 60, 60,0.4) 20px),-webkit-radial-gradient(transparent 10px, rgba(60, 60, 60,0.2) 10px);*/
+    background-color: yellow;
+    transform: scale(1);
+    -webkit-box-shadow: 0 0 0 1px rgba(60, 60, 60, 1);
+
+  }
+  100% {
+   /* background: -webkit-radial-gradient(transparent 67%, rgba(60, 60, 60,1) 67%), -webkit-radial-gradient(transparent 20px, rgba(60, 60, 60,0.6) 20px),-webkit-radial-gradient(transparent 10px, rgba(60, 60, 60,0.4) 10px);*/
+    background-color: yellow;
+    transform: scale(0.8);
+    -webkit-box-shadow: 0 0 0 10px rgba(60, 60, 60, 1);
+
+  }
+}
+
+/*@-webkit-keyframes pill-pulse {
+0% {
+background-color: yellow;
+transform: scale(0.6);
+-webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 1px rgba(237, 201, 0, 1);
+}
+50% {
+transform: scale(1);
+-webkit-box-shadow: inset 0 0 0 25px rgba(0,0,0, 0),0 0 0 25px rgba(0,0,0, 0);
+}
+
+100% {
+transform: scale(0.6);
+background-color: yellow;
+-webkit-box-shadow: inset 0 0 0 0 rgba(237, 201, 0, 0.9), 0 0 0 1px rgba(0,0,0, 0);
+}
+}
+*/
+.dotty{
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  from { transform: scale(1);
+    -webkit-box-shadow:  0 0 0 1px rgba(60, 60, 60, 1);
+    background-color: lightpink; 
+  }
+  50% { transform: scale(0.8);
+    -webkit-box-shadow:  0 0 0 9px rgba(60, 60, 60, 1);
+    background-color: pink; 
+  }
+  to { transform: scale(1); 
+    -webkit-box-shadow:  0 0 0 1px rgba(60, 60, 60, 1);
+    background-color: lightpink;
+  }
+}
+
+
